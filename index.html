@@ -971,17 +971,34 @@
                     Discover the Power of Our Products
                   </h2>
                   <p class="thq-body-large">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Suspendisse varius enim in eros elementum tristique. Duis
-                    cursus, mi quis viverra ornare, eros dolor interdum nulla,
-                    ut commodo diam libero vitae erat.
+                    Choosing your preferred Field of education and Career Option is the most essential part in your future Job. Take a look at what you can get!
                   </p>
                   <div class="steps-actions">
-                    <button
-                      class="thq-button-animated thq-button-filled steps-button"
-                    >
-                      <span class="thq-body-small">Main action</span>
-                    </button>
+                    <form id="careerForm" class="steps-form" style="margin-top: 20px;">
+                      <div class="form-group" style="border: 2px solid red; padding: 20px; margin-bottom: 20px; border-radius: 10px;">
+                        <label for="career" style="font-weight: bold;">Choose Your Career Path:</label>
+                        <select id="career" name="career" class="steps-select" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                          <option value="Software Engineer">Software Engineer</option>
+                          <option value="Entrepreneur">Entrepreneur</option>
+                          <option value="Doctor">Doctor</option>
+                          <option value="Architect">Architect</option>
+                        </select>
+                      </div>
+                      
+                      <div class="form-group" style="border: 2px solid red; padding: 20px; margin-bottom: 20px; border-radius: 10px;">
+                        <label for="field" style="font-weight: bold;">Select Your Field of Interest:</label>
+                        <select id="field" name="field" class="steps-select" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                          <option value="Technology">Technology</option>
+                          <option value="Healthcare">Healthcare</option>
+                          <option value="Business">Business</option>
+                          <option value="Arts">Arts</option>
+                        </select>
+                      </div>
+  
+                      <button type="button" id="getRecommendations" class="thq-button-animated thq-button-filled steps-button" style="padding: 10px 20px;">
+                        Get Recommendations
+                      </button>
+                    </form>
                   </div>
                 </div>
                 <div class="steps-container3">
@@ -1034,10 +1051,44 @@
                   </div>
                 </div>
               </div>
+              <div id="recommendations" style="display: none; margin-top: 20px; border: 2px solid green; padding: 20px; border-radius: 10px;">
+                <h2 style="font-weight: bold;">Recommended Universities:</h2>
+                <ul id="universityList" style="margin-top: 10px;">
+                </ul>
+              </div>
             </div>
           </div>
-        </steps-wrapper>
-        <testimonial-wrapper class="testimonial-wrapper">
+          <testimonial-wrapper class="testimonial-wrapper">
+            <script>
+              document.getElementById('getRecommendations').addEventListener('click', () => {
+                const career = document.getElementById('career').value;
+                const field = document.getElementById('field').value;
+  
+                const recommendations = {
+                  'Technology': ['MIT', 'Stanford', 'Carnegie Mellon'],
+                  'Healthcare': ['Johns Hopkins', 'Mayo Clinic', 'Harvard Medical'],
+                  'Business': ['Harvard Business School', 'Wharton', 'London Business School'],
+                  'Arts': ['RISD', 'Parsons', 'SCAD']
+                };
+  
+                const recommendedUniversities = recommendations[field] || [];
+                const universityList = document.getElementById('universityList');
+  
+                universityList.innerHTML = '';
+                recommendedUniversities.forEach(uni => {
+                  const listItem = document.createElement('li');
+                  listItem.textContent = uni;
+                  universityList.appendChild(listItem);
+                });
+  
+                document.getElementById('recommendations').style.display = 'block';
+              });
+  
+              document.getElementById('reset').addEventListener('click', () => {
+                document.getElementById('careerForm').reset();
+                document.getElementById('recommendations').style.display = 'none';
+              });
+            </script>
           <!--Testimonial component-->
           <div class="thq-section-padding">
             <div class="testimonial-max-width thq-section-max-width">
