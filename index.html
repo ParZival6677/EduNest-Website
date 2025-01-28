@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Spotless Hungry Crocodile</title>
+    <title>EduNest</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="https://35finance.mskobr.ru/images/nectar_training_icon.png" type="image/png" />
 
     <style data-tag="reset-style-sheet">
       html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 1000vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
@@ -102,21 +104,9 @@
                     <span>Contact Us</span>
                   </span>
                   <span class="thq-link thq-body-small">
-                    <span>Link5</span>
+                    <span>Links</span>
                   </span>
                 </nav>
-                <div class="navbar-buttons1">
-                  <button
-                    class="navbar-action11 thq-button-animated thq-button-filled"
-                  >
-                    <span class="thq-body-small">Action 1</span>
-                  </button>
-                  <button
-                    class="navbar-action21 thq-button-outline thq-button-animated"
-                  >
-                    <span class="thq-body-small">Action 2</span>
-                  </button>
-                </div>
               </div>
               <div data-thq="thq-burger-menu" class="navbar-burger-menu">
                 <svg viewBox="0 0 1024 1024" class="navbar-icon1">
@@ -187,10 +177,10 @@
                 </p>
               </div>
               <div class="hero-actions">
-                <button class="thq-button-filled hero-button1">
+                <button class="thq-button-filled hero-button1" onclick="location.href='#discover-section'">
                   <span class="thq-body-small"><span>Get Started</span></span>
                 </button>
-                <button class="thq-button-outline hero-button2">
+                <button class="thq-button-outline hero-button2" onclick="location.href='#testimonials-section'">
                   <span class="thq-body-small"><span>Learn More</span></span>
                 </button>
               </div>
@@ -433,38 +423,6 @@
             </div>
           </div>
         </features1-wrapper>
-        <cta-wrapper class="cta-wrapper">
-          <!--CTA component-->
-          <div class="thq-section-padding">
-            <div class="thq-section-max-width">
-              <div class="cta-accent2-bg">
-                <div class="cta-accent1-bg">
-                  <div class="cta-container2">
-                    <div class="cta-content">
-                      <span class="thq-heading-2">
-                        <span>Ready to find your perfect match?</span>
-                      </span>
-                      <p class="thq-body-large">
-                        <span>
-                          Sign up now to discover personalized recommendations
-                          for your higher education journey.
-                        </span>
-                      </p>
-                    </div>
-                    <div class="cta-actions">
-                      <button
-                        type="button"
-                        class="thq-button-filled cta-button"
-                      >
-                        <span>Get Started</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </cta-wrapper>
         <features2-wrapper class="features2-wrapper">
           <!--Features2 component-->
           <div class="thq-section-padding">
@@ -963,7 +921,8 @@
         </pricing-wrapper>
         <steps-wrapper class="steps-wrapper">
           <!--Steps component-->
-          <div class="steps-container1 thq-section-padding">
+          
+          <div id="discover-section" class="steps-container1 thq-section-padding">
             <div class="steps-max-width thq-section-max-width">
               <div class="steps-container2 thq-grid-2">
                 <div class="steps-section-header">
@@ -994,7 +953,7 @@
                           <option value="Arts">Arts</option>
                         </select>
                       </div>
-  
+
                       <button type="button" id="getRecommendations" class="thq-button-animated thq-button-filled steps-button" style="padding: 10px 20px;">
                         Get Recommendations
                       </button>
@@ -1063,34 +1022,68 @@
               document.getElementById('getRecommendations').addEventListener('click', () => {
                 const career = document.getElementById('career').value;
                 const field = document.getElementById('field').value;
-  
+
                 const recommendations = {
-                  'Technology': ['MIT', 'Stanford', 'Carnegie Mellon'],
-                  'Healthcare': ['Johns Hopkins', 'Mayo Clinic', 'Harvard Medical'],
-                  'Business': ['Harvard Business School', 'Wharton', 'London Business School'],
-                  'Arts': ['RISD', 'Parsons', 'SCAD']
+                  'Technology': [
+                    { name: 'MIT', description: 'Top tech university with cutting-edge research facilities.', scholarships: ['Full-ride for STEM students', 'Tech Innovators Scholarship'] },
+                    { name: 'Stanford', description: 'Renowned for entrepreneurship and innovation.', scholarships: ['Stanford Fellowship', 'Entrepreneurial Leaders Grant'] },
+                    { name: 'Carnegie Mellon', description: 'Known for AI and robotics programs.', scholarships: ['CMU Robotics Scholarship', 'Innovation in Tech Award'] }
+                  ],
+                  'Healthcare': [
+                    { name: 'Johns Hopkins', description: 'World leader in medical education and research.', scholarships: ['Healthcare Leaders Scholarship', 'Global Medicine Fund'] },
+                    { name: 'Mayo Clinic', description: 'Top medical school with hands-on clinical training.', scholarships: ['Clinical Excellence Award', 'Medical Pioneers Grant'] },
+                    { name: 'Harvard Medical', description: 'Prestigious program with exceptional faculty.', scholarships: ['Harvard Medical Aid', 'Future Doctors Fund'] }
+                  ],
+                  'Business': [
+                    { name: 'Harvard Business School', description: 'Premier business school with global impact.', scholarships: ['HBS Merit Scholarships', 'Business Innovators Fund'] },
+                    { name: 'Wharton', description: 'Leading school for finance and management.', scholarships: ['Finance Leaders Scholarship', 'Wharton Fellows'] },
+                    { name: 'London Business School', description: 'Top-ranked European business program.', scholarships: ['LBS Global Scholarship', 'Entrepreneurial Spirit Award'] }
+                  ],
+                  'Arts': [
+                    { name: 'RISD', description: 'Renowned for design and fine arts education.', scholarships: ['RISD Creative Talent Grant', 'Art Innovators Scholarship'] },
+                    { name: 'Parsons', description: 'Leader in fashion and design education.', scholarships: ['Parsons Design Fellowship', 'New Talent Grant'] },
+                    { name: 'SCAD', description: 'Comprehensive arts programs with industry ties.', scholarships: ['SCAD Artistic Excellence Award', 'Emerging Creatives Scholarship'] }
+                  ]
                 };
-  
+
                 const recommendedUniversities = recommendations[field] || [];
                 const universityList = document.getElementById('universityList');
-  
+
                 universityList.innerHTML = '';
                 recommendedUniversities.forEach(uni => {
                   const listItem = document.createElement('li');
-                  listItem.textContent = uni;
+                  listItem.innerHTML = `<span style="cursor: pointer; color: blue; text-decoration: underline;" onclick="showModal('${uni.name}', '${uni.description}', '${uni.scholarships.join(', ')}')">${uni.name}</span>`;
                   universityList.appendChild(listItem);
                 });
-  
+
                 document.getElementById('recommendations').style.display = 'block';
               });
-  
-              document.getElementById('reset').addEventListener('click', () => {
-                document.getElementById('careerForm').reset();
-                document.getElementById('recommendations').style.display = 'none';
-              });
+
+              function showModal(name, description, scholarships) {
+                const modal = document.createElement('div');
+                modal.style.position = 'fixed';
+                modal.style.top = '50%';
+                modal.style.left = '50%';
+                modal.style.transform = 'translate(-50%, -50%)';
+                modal.style.backgroundColor = 'white';
+                modal.style.border = '2px solid black';
+                modal.style.padding = '20px';
+                modal.style.borderRadius = '10px';
+                modal.style.zIndex = '1000';
+
+                modal.innerHTML = `
+                  <h2>${name}</h2>
+                  <p>${description}</p>
+                  <p><strong>Scholarships:</strong> ${scholarships}</p>
+                  <button onclick="this.parentElement.remove();" style="margin-top: 10px;">Close</button>
+                `;
+
+                document.body.appendChild(modal);
+              }
             </script>
+
           <!--Testimonial component-->
-          <div class="thq-section-padding">
+          <div id="testimonials-section" class="thq-section-padding">
             <div class="testimonial-max-width thq-section-max-width">
               <div class="testimonial-container10">
                 <h2 class="thq-heading-2"><span>Testimonials</span></h2>
