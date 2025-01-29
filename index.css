@@ -371,9 +371,11 @@
 }
  
 .features1-image-container {
-  height: 100%;
+  width: 50;
+  height: 50;
   display: flex;
   position: relative;
+  overflow: hidden;
 }
  
 .features1-image1 {
@@ -730,9 +732,11 @@
 }
  
 .features2-image-container {
-  height: 100%;
+  width: 50;
+  height: 50;
   display: flex;
   position: relative;
+  overflow: hidden;
 }
  
 .features2-image1 {
